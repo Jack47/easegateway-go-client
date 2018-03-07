@@ -1,5 +1,6 @@
 package pdu
 
 type PipelinesRetrieveClusterResponse struct {
-	Pipelines []PipelineSpec `json:"pipelines"`
+	Pipelines  []PipelineSpec `json:"pipelines"`
+	Pagination paginationInfo `json:"pagination"`
 }

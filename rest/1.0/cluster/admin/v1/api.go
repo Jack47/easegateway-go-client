@@ -94,6 +94,8 @@ func (a *ClusterAdminApi) GetPipelines(group string,
 	path := fmt.Sprintf("%s/%s/pipelines", a.Configuration.BasePath, group)
 	headers := make(map[string]string)
 	queryParams := url.Values{}
+	queryParams.Add("page", fmt.Sprintf("%d", pipelinesRetrieveClusterRequest.Page))
+	queryParams.Add("limit", fmt.Sprintf("%d", pipelinesRetrieveClusterRequest.Limit))
 
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {
@@ -394,6 +396,8 @@ func (a *ClusterAdminApi) GetPlugins(group string, pluginsRetrieveClusterRequest
 	path := fmt.Sprintf("%s/%s/plugins", a.Configuration.BasePath, group)
 	headers := make(map[string]string)
 	queryParams := url.Values{}
+	queryParams.Add("page", fmt.Sprintf("%d", pluginsRetrieveClusterRequest.Page))
+	queryParams.Add("limit", fmt.Sprintf("%d", pluginsRetrieveClusterRequest.Limit))
 
 	// add default headers if any
 	for key := range a.Configuration.DefaultHeader {

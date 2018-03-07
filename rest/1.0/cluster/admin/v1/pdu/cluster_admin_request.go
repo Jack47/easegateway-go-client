@@ -6,7 +6,9 @@ import (
 
 type ClusterRetrieveRequest struct {
 	common_pdu.ClusterRequest
-	Consistent bool `json:"consistent,omitempty"`
+	Consistent bool   `json:"consistent,omitempty"`
+	Page       uint32 `json:"page,omitempty"`
+	Limit      uint32 `json:"limit,omitempty"`
 }
 
 type ClusterOperationRequest struct {
